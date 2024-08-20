@@ -17,7 +17,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./src:/app/src
+      - ./server/src:/app/src
       - ./pom.xml:/app/pom.xml
     environment:
       - SPRING_PROFILES_ACTIVE=dev
