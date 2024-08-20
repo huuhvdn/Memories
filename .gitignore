@@ -1,44 +1,20 @@
-# .gitignore cho dự án Java Spring Boot + Next.js
-
-# Bỏ qua các thư mục và file build của Backend (Maven)
-Backend/target/
-Backend/.mvn/
-Backend/mvnw
-Backend/mvnw.cmd
-
-# Bỏ qua các file cấu hình IDE
-*.iml
-*.ipr
-*.iws
-.idea/
+# IDE and editor settings
 .vscode/
-*.swp
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.iml
 
-# Bỏ qua các file cấu hình IDE Eclipse
-.project
-.classpath
-.settings/
-*.launch
+# Mac specific files
+*.DS_Store
 
-# Bỏ qua các file hệ điều hành
-.DS_Store
-Thumbs.db
-
-# Bỏ qua các file log
+# Windows specific files
+*.db
 *.log
 
-# Bỏ qua các file tạm thời
-tmp/
+# Temporary files
 *.tmp
-
-# Bỏ qua các thư mục và file build của Frontend (Next.js)
-Frontend/.next/
-Frontend/node_modules/
-
-# Bỏ qua các file lock
-Frontend/yarn.lock
-Frontend/package-lock.json
-
-# Bỏ qua các thư mục và file build của Frontend (Next.js)
-Frontend/out/
-Frontend/build/
+*.swp
+*.swo
+*.bak
+*.orig
