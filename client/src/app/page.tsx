@@ -1,5 +1,5 @@
 export default function Home() {
   return (
-    <div className="text-blue-700">Home Page</div>
+    <div className="tw-text-blue-700">Home Page</div>
   );
 }
