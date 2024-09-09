@@ -14,7 +14,7 @@ public class MemoryMapper {
         entity.setMemoryId(dto.getMemoryId());
         entity.setTitle(dto.getTitle());
         entity.setEventDate(dto.getEventDate());
-        entity.setCreateAt(dto.getCreateAt());
+        entity.setCreatedAt(dto.getCreatedAt());
 
         if(dto.getImageDTO() != null){
             Image image = new Image();
@@ -33,7 +33,7 @@ public class MemoryMapper {
         dto.setMemoryId(entity.getMemoryId());
         dto.setTitle(entity.getTitle());
         dto.setEventDate(entity.getEventDate());
-        dto.setCreateAt(entity.getCreateAt());
+        dto.setCreatedAt(entity.getCreatedAt());
 
         if(entity.getImage() != null){
             ImageDTO image = new ImageDTO();

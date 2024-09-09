@@ -11,6 +11,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -25,19 +26,20 @@ public class Memory {
     private String title;
     @Column(name = "EventDate")
     private LocalDateTime eventDate;
-    @Column(name ="CreateAt")
-    private LocalDateTime createAt;
+    @Column(name ="CreatedAt")
+    private LocalDateTime createdAt;
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ImageId")
     private Image image;
 
     
     public Memory() {
     }
-    public Memory(UUID memoryId, String title, LocalDateTime eventDate, LocalDateTime createAt, Image image) {
+    public Memory(UUID memoryId, String title, LocalDateTime eventDate, LocalDateTime createdAt, Image image) {
         this.memoryId = memoryId;
         this.title = title;
         this.eventDate = eventDate;
-        this.createAt = createAt;
+        this.createdAt = createdAt;
         this.image = image;
     }
     
@@ -59,11 +61,11 @@ public class Memory {
     public void setEventDate(LocalDateTime eventDate) {
         this.eventDate = eventDate;
     }
-    public LocalDateTime getCreateAt() {
-        return createAt;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
-    public void setCreateAt(LocalDateTime createAt) {
-        this.createAt = createAt;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
     public Image getImage() {
         return image;
