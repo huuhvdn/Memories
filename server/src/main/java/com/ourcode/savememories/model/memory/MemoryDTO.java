@@ -9,17 +9,17 @@ public class MemoryDTO {
     private UUID memoryId;
     private String title;
     private LocalDateTime eventDate;
-    private LocalDateTime createAt;
+    private LocalDateTime createdAt;
     private ImageDTO imageDTO;
 
     
     public MemoryDTO() {
     }
-    public MemoryDTO(UUID memoryId, String title, LocalDateTime eventDate, LocalDateTime createAt, ImageDTO imageDTO) {
+    public MemoryDTO(UUID memoryId, String title, LocalDateTime eventDate, LocalDateTime createdAt, ImageDTO imageDTO) {
         this.memoryId = memoryId;
         this.title = title;
         this.eventDate = eventDate;
-        this.createAt = createAt;
+        this.createdAt = createdAt;
         this.imageDTO = imageDTO;
     }
 
@@ -41,11 +41,11 @@ public class MemoryDTO {
     public void setEventDate(LocalDateTime eventDate) {
         this.eventDate = eventDate;
     }
-    public LocalDateTime getCreateAt() {
-        return createAt;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
-    public void setCreateAt(LocalDateTime createAt) {
-        this.createAt = createAt;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
     public ImageDTO getImageDTO() {
         return imageDTO;
