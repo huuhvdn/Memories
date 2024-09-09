@@ -21,7 +21,7 @@ import com.ourcode.savememories.repository.ImageRepository;
 @Service
 public class ImageServiceImpl implements ImageService{
     private final ImageRepository imageRepository;
-    @Value("${upload.dir}")
+    @Value("${upload-dir}")
     private String uploadDir;
     @Autowired
     public ImageServiceImpl(ImageRepository imageRepository){
