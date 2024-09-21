@@ -4,7 +4,7 @@ type AuthLayoutProps = {
 export default function AuthLayout({ children }: AuthLayoutProps) {
   const styles = {
     backgroundWrapper: {
-      backgroundImage: "linear-gradient(#F8E49B, #949E57);",
+      backgroundImage: "linear-gradient(#F8E49B, #949E57)",
     },
   };
 
