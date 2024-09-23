@@ -6,7 +6,7 @@
 - [Git Conventional](#gitconventional)
 
 ## Giới thiệu
-    Dự án "Memories" là một ứng dụng web được xây dựng bằng Java và Spring Boot. Mục tiêu của dự án là cung cấp một nền tảng để người dùng có thể lưu trữ, chia sẻ và quản lý những kỷ niệm đáng nhớ của họ.
+Dự án "Memories" là một ứng dụng web được xây dựng bằng Java và Spring Boot. Mục tiêu của dự án là cung cấp một nền tảng để người dùng có thể lưu trữ, chia sẻ và quản lý những kỷ niệm đáng nhớ của họ.
 ## Tính năng
 - Lưu trữ kỷ niệm: Người dùng có thể tạo và lưu lại những kỷ niệm dưới dạng văn bản hoặc hình ảnh.
 - Chia sẻ kỷ niệm: Cho phép người dùng chia sẻ kỷ niệm của mình với bạn bè hoặc trên các nền tảng mạng xã hội.
@@ -21,11 +21,9 @@
 - MySQL hoặc SQLServer
 
 ## Git Conventional
-<type>[optional scope]: <description>
-
-[optional body]
-
-[optional footer(s)]
+    <type>[optional scope]: <description>
+    [optional body]
+    [optional footer(s)]
 
 - type: fix,feat,refactor,test,chore(không liên quan tới tính năng),docs,style,perf,revert.
 - Sử dụng ! để đánh dấu quan trọng
