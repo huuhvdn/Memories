@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 import com.ourcode.savememories.dtos.MemoryDTO;
 import com.ourcode.savememories.entities.Memory;
+import com.ourcode.savememories.exception.memory.MemoryNotFoundException;
 import com.ourcode.savememories.mapper.ImageMapper;
 import com.ourcode.savememories.mapper.MemoryMapper;
 import com.ourcode.savememories.repository.MemoryRepository;
@@ -43,13 +44,13 @@ public class MemoryServiceImpl implements MemoryService {
     }
     @Override
     public MemoryDTO getMemoryById(UUID id) {
-        Memory memory = memoryRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Memory not found"));
+        Memory memory = memoryRepository.findById(id).orElseThrow(() -> new MemoryNotFoundException(id));
         return MemoryMapper.toDTO(memory);
     }
 
     @Override
     public MemoryDTO updateMemory(UUID id, MemoryDTO memoryDTO) {
-        Memory memory = memoryRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Memory not found"));
+        Memory memory = memoryRepository.findById(id).orElseThrow(() -> new MemoryNotFoundException(id));
         if (memoryDTO.getTitle() != null) {
             memory.setTitle(memoryDTO.getTitle());
         }
@@ -67,7 +68,7 @@ public class MemoryServiceImpl implements MemoryService {
 
     @Override
     public void deleteMemory(UUID id) {
-        Memory memory = memoryRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Memory not found"));
+        Memory memory = memoryRepository.findById(id).orElseThrow(() -> new MemoryNotFoundException(id));
         memoryRepository.delete(memory);
     }
 }

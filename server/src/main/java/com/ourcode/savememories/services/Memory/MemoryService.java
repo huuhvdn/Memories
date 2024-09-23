@@ -10,6 +10,6 @@ public interface MemoryService {
     MemoryDTO createMemory(MemoryDTO memoryDTO);
     List<MemoryDTO> getAllMemories();
     MemoryDTO getMemoryById(UUID id);
-    MemoryDTO updateMemory(UUID id, MemoryDTO memoryDTO); // Đảm bảo phương thức này có trong interface
+    MemoryDTO updateMemory(UUID id, MemoryDTO memoryDTO);
     void deleteMemory(UUID id);
 }
