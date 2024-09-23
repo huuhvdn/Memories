@@ -7,7 +7,7 @@ import java.util.UUID;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.ourcode.savememories.model.image.ImageDTO;
+import com.ourcode.savememories.dtos.ImageDTO;
 
 public interface ImageService {
     List<ImageDTO> findAll();

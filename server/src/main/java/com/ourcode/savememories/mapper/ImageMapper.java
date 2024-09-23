@@ -1,4 +1,7 @@
-package com.ourcode.savememories.model.image;
+package com.ourcode.savememories.mapper;
+
+import com.ourcode.savememories.dtos.ImageDTO;
+import com.ourcode.savememories.entities.Image;
 
 public class ImageMapper {
     public static Image toEntity(ImageDTO dto){

@@ -7,10 +7,10 @@ import java.util.UUID;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.ourcode.savememories.model.image.ImageMapper;
-import com.ourcode.savememories.model.memory.Memory;
-import com.ourcode.savememories.model.memory.MemoryDTO;
-import com.ourcode.savememories.model.memory.MemoryMapper;
+import com.ourcode.savememories.dtos.MemoryDTO;
+import com.ourcode.savememories.entities.Memory;
+import com.ourcode.savememories.mapper.ImageMapper;
+import com.ourcode.savememories.mapper.MemoryMapper;
 import com.ourcode.savememories.repository.MemoryRepository;
 
 @Service

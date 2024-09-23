@@ -1,4 +1,4 @@
-package com.ourcode.savememories.model.image;
+package com.ourcode.savememories.entities;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

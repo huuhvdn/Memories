@@ -2,8 +2,9 @@ package com.ourcode.savememories.services.Memory;
 
 import java.util.UUID;
 
+import com.ourcode.savememories.dtos.MemoryDTO;
+
 import java.util.List;
-import com.ourcode.savememories.model.memory.MemoryDTO;
 
 public interface MemoryService {
     MemoryDTO createMemory(MemoryDTO memoryDTO);

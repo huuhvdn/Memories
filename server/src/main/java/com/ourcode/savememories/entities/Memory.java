@@ -1,9 +1,7 @@
-package com.ourcode.savememories.model.memory;
+package com.ourcode.savememories.entities;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
-
-import com.ourcode.savememories.model.image.Image;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

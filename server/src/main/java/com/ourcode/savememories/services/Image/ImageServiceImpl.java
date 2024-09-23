@@ -13,9 +13,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.ourcode.savememories.model.image.Image;
-import com.ourcode.savememories.model.image.ImageDTO;
-import com.ourcode.savememories.model.image.ImageMapper;
+import com.ourcode.savememories.dtos.ImageDTO;
+import com.ourcode.savememories.entities.Image;
+import com.ourcode.savememories.mapper.ImageMapper;
 import com.ourcode.savememories.repository.ImageRepository;
 
 @Service
