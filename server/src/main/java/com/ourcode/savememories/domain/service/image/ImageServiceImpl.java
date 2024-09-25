@@ -58,9 +58,6 @@ public class ImageServiceImpl implements ImageService{
         String filePath = uploadDir + File.separator + fileName;
         String fileType = file.getContentType();
 
-        // if(!isValidImageType(fileType)){
-        //     throw new IllegalArgumentException("Invalid image Type:"+ fileType);
-        // }
         try {
             file.transferTo(new File(filePath));
         } catch (Exception e) {
@@ -74,9 +71,5 @@ public class ImageServiceImpl implements ImageService{
         image.setCreateAt(LocalDateTime.now());
 
         return ImageMapper.toDTO(imageRepository.save(image));
-    }
-    @Override
-    public boolean isValidImageType(String fileType){
-        return fileType != null && (fileType.equals("image/jpge")||fileType.equals("image/png")||fileType.equals("image/gif")||fileType.equals("image/bmp"));
     }
 }

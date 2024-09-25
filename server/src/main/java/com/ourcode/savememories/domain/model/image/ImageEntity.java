@@ -1,37 +1,23 @@
 package com.ourcode.savememories.domain.model.image;
 
-import java.time.LocalDateTime;
-import java.util.UUID;
+import com.ourcode.savememories.domain.model.BaseEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
 import jakarta.persistence.Table;
 
 @Entity
 @Table(schema = "dbo", name = "Image")
-public class ImageEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "ImageId")
-    private UUID imageId;
+public class ImageEntity extends BaseEntity{
+
     @Column(name = "Name")
     private String name;
     @Column(name = "Path")
     private String path;
     @Column(name = "Type")
     private String type;
-    @Column(name = "CreateAt")
-    private LocalDateTime createAt;
 
-    public UUID getImageId() {
-        return imageId;
-    }
-    public void setImageId(UUID imageId) {
-        this.imageId = imageId;
-    }
     public String getName() {
         return name;
     }
@@ -49,11 +35,5 @@ public class ImageEntity {
     }
     public void setType(String type) {
         this.type = type;
-    }
-    public LocalDateTime getCreateAt() {
-        return createAt;
-    }
-    public void setCreateAt(LocalDateTime createAt) {
-        this.createAt = createAt;
     }
 }

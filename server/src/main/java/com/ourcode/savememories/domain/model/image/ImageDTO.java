@@ -9,6 +9,7 @@ public class ImageDTO {
     private String path;
     private String type;   
     private LocalDateTime createAt;
+    private LocalDateTime updateAt;
     
     public UUID getImageId() {
         return imageId;
@@ -39,5 +40,11 @@ public class ImageDTO {
     }
     public void setCreateAt(LocalDateTime createAt) {
         this.createAt = createAt;
+    }
+    public LocalDateTime getUpdateAt() {
+        return updateAt;
+    }
+    public void setUpdateAt(LocalDateTime updateAt) {
+        this.updateAt = updateAt;
     }
 }

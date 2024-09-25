@@ -14,5 +14,4 @@ public interface ImageService {
     ImageDTO save(ImageDTO dto);
     void deleteById(UUID id);
     ImageDTO uploadImage(MultipartFile file);
-    boolean isValidImageType(String fileType);
 }

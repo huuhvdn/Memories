@@ -10,6 +10,7 @@ public class MemoryDTO {
     private String title;
     private LocalDateTime eventDate;
     private LocalDateTime createdAt;
+    private LocalDateTime updateAt;
     private ImageDTO imageDTO;
 
     
@@ -37,6 +38,12 @@ public class MemoryDTO {
     }
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+    public LocalDateTime getUpdateAt() {
+        return updateAt;
+    }
+    public void setUpdateAt(LocalDateTime updateAt) {
+        this.updateAt = updateAt;
     }
     public ImageDTO getImageDTO() {
         return imageDTO;

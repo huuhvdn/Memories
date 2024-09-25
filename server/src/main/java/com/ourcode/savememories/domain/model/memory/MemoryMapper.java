@@ -11,10 +11,10 @@ public class MemoryMapper {
         }
         MemoryEntity entity = new MemoryEntity();
 
-        entity.setMemoryId(dto.getMemoryId());
+        entity.setId(dto.getMemoryId());
         entity.setTitle(dto.getTitle());
         entity.setEventDate(dto.getEventDate());
-        entity.setCreatedAt(dto.getCreatedAt());
+        entity.setCreateAt(dto.getCreatedAt());
 
         if(dto.getImageDTO() != null){
             ImageEntity image = new ImageEntity();
@@ -30,10 +30,10 @@ public class MemoryMapper {
         }
         MemoryDTO dto = new MemoryDTO();
 
-        dto.setMemoryId(entity.getMemoryId());
+        dto.setMemoryId(entity.getId());
         dto.setTitle(entity.getTitle());
         dto.setEventDate(entity.getEventDate());
-        dto.setCreatedAt(entity.getCreatedAt());
+        dto.setCreatedAt(entity.getCreateAt());
 
         if(entity.getImage() != null){
             ImageDTO image = new ImageDTO();

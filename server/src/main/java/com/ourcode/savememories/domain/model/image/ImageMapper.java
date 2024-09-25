@@ -7,7 +7,7 @@ public class ImageMapper {
         }
         ImageEntity entity = new ImageEntity();
 
-        entity.setImageId(dto.getImageId());
+        entity.setId(dto.getImageId());
         entity.setName(dto.getName());
         entity.setPath(dto.getPath());
         entity.setType(dto.getType());
@@ -21,7 +21,7 @@ public class ImageMapper {
         }
         ImageDTO dto = new ImageDTO();
 
-        dto.setImageId(entity.getImageId());
+        dto.setImageId(entity.getId());
         dto.setName(entity.getName());
         dto.setPath(entity.getPath());
         dto.setType(entity.getType());
