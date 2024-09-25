@@ -1,4 +1,4 @@
-package com.ourcode.savememories.dtos;
+package com.ourcode.savememories.domain.model.image;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

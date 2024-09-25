@@ -1,7 +1,9 @@
-package com.ourcode.savememories.entities;
+package com.ourcode.savememories.domain.model.memory;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
+
+import com.ourcode.savememories.domain.model.image.ImageEntity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -15,7 +17,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(schema = "dto", name = "Memories")
-public class Memory {
+public class MemoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name ="MemoryId")
@@ -28,12 +30,12 @@ public class Memory {
     private LocalDateTime createdAt;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ImageId")
-    private Image image;
+    private ImageEntity image;
 
     
-    public Memory() {
+    public MemoryEntity() {
     }
-    public Memory(UUID memoryId, String title, LocalDateTime eventDate, LocalDateTime createdAt, Image image) {
+    public MemoryEntity(UUID memoryId, String title, LocalDateTime eventDate, LocalDateTime createdAt, ImageEntity image) {
         this.memoryId = memoryId;
         this.title = title;
         this.eventDate = eventDate;
@@ -65,10 +67,10 @@ public class Memory {
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
-    public Image getImage() {
+    public ImageEntity getImage() {
         return image;
     }
-    public void setImage(Image image) {
+    public void setImage(ImageEntity image) {
         this.image = image;
     }
 }

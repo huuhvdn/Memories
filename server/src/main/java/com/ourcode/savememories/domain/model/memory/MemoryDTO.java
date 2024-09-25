@@ -1,7 +1,9 @@
-package com.ourcode.savememories.dtos;
+package com.ourcode.savememories.domain.model.memory;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
+
+import com.ourcode.savememories.domain.model.image.ImageDTO;
 
 public class MemoryDTO {
     private UUID memoryId;
