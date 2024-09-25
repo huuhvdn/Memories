@@ -34,11 +34,7 @@ public class MemoryController {
     public ResponseEntity<MemoryDTO> createMemory(@RequestPart("memory") MemoryDTO memoryDTO
                                                     ,@RequestPart("file") MultipartFile file){
         ImageDTO image = imageServiceImpl.uploadImage(file);
-
-        
-        MemoryDTO createdMemory = new MemoryDTO();
-        createdMemory.setTitle(memoryDTO.getTitle());
-        createdMemory.setEventDate(memoryDTO.getEventDate());
+        MemoryDTO createdMemory = memoryDTO;
         createdMemory.setImageDTO(image);
         return new ResponseEntity<>(memoryServiceImpl.createMemory(createdMemory),HttpStatus.CREATED);
     }
