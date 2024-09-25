@@ -1,14 +1,11 @@
-package com.ourcode.savememories.mapper;
-
-import com.ourcode.savememories.dtos.ImageDTO;
-import com.ourcode.savememories.entities.Image;
+package com.ourcode.savememories.domain.model.image;
 
 public class ImageMapper {
-    public static Image toEntity(ImageDTO dto){
+    public static ImageEntity toEntity(ImageDTO dto){
         if(dto == null){
             return null;
         }
-        Image entity = new Image();
+        ImageEntity entity = new ImageEntity();
 
         entity.setImageId(dto.getImageId());
         entity.setName(dto.getName());
@@ -18,7 +15,7 @@ public class ImageMapper {
 
         return entity;
     }
-    public static ImageDTO toDTO(Image entity){
+    public static ImageDTO toDTO(ImageEntity entity){
         if(entity == null){
             return null;
         }

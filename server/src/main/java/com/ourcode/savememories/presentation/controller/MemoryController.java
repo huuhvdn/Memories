@@ -1,4 +1,4 @@
-package com.ourcode.savememories.controller;
+package com.ourcode.savememories.presentation.controller;
 
 import java.util.List;
 import java.util.UUID;
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ourcode.savememories.dtos.MemoryDTO;
-import com.ourcode.savememories.services.Memory.MemoryServiceImpl;
+import com.ourcode.savememories.domain.model.memory.MemoryDTO;
+import com.ourcode.savememories.domain.service.memory.MemoryServiceImpl;
 
 @RestController
 @RequestMapping("/api/memories")

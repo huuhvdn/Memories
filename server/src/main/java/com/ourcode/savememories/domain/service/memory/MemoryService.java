@@ -1,8 +1,8 @@
-package com.ourcode.savememories.services.Memory;
+package com.ourcode.savememories.domain.service.memory;
 
 import java.util.UUID;
 
-import com.ourcode.savememories.dtos.MemoryDTO;
+import com.ourcode.savememories.domain.model.memory.MemoryDTO;
 
 import java.util.List;
 

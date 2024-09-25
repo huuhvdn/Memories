@@ -1,16 +1,15 @@
-package com.ourcode.savememories.mapper;
+package com.ourcode.savememories.domain.model.memory;
 
-import com.ourcode.savememories.dtos.ImageDTO;
-import com.ourcode.savememories.dtos.MemoryDTO;
-import com.ourcode.savememories.entities.Image;
-import com.ourcode.savememories.entities.Memory;
+import com.ourcode.savememories.domain.model.image.ImageDTO;
+import com.ourcode.savememories.domain.model.image.ImageEntity;
+import com.ourcode.savememories.domain.model.image.ImageMapper;
 
 public class MemoryMapper {
-    public static Memory toEntity(MemoryDTO dto){
+    public static MemoryEntity toEntity(MemoryDTO dto){
         if (dto == null){
             return null;
         }
-        Memory entity = new Memory();
+        MemoryEntity entity = new MemoryEntity();
 
         entity.setMemoryId(dto.getMemoryId());
         entity.setTitle(dto.getTitle());
@@ -18,14 +17,14 @@ public class MemoryMapper {
         entity.setCreatedAt(dto.getCreatedAt());
 
         if(dto.getImageDTO() != null){
-            Image image = new Image();
+            ImageEntity image = new ImageEntity();
             image = ImageMapper.toEntity(dto.getImageDTO());
             entity.setImage(image);
         }
 
         return entity;
     }
-    public static MemoryDTO toDTO(Memory entity){
+    public static MemoryDTO toDTO(MemoryEntity entity){
         if(entity == null){
             return null;
         }

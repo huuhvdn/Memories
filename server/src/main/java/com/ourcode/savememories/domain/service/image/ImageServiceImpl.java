@@ -1,4 +1,4 @@
-package com.ourcode.savememories.services.Image;
+package com.ourcode.savememories.domain.service.image;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,10 +13,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.ourcode.savememories.dtos.ImageDTO;
-import com.ourcode.savememories.entities.Image;
-import com.ourcode.savememories.mapper.ImageMapper;
-import com.ourcode.savememories.repository.ImageRepository;
+import com.ourcode.savememories.domain.model.image.ImageDTO;
+import com.ourcode.savememories.domain.model.image.ImageEntity;
+import com.ourcode.savememories.domain.model.image.ImageMapper;
+import com.ourcode.savememories.infrastructure.repository.ImageRepository;
 
 @Service
 public class ImageServiceImpl implements ImageService{
@@ -37,7 +37,7 @@ public class ImageServiceImpl implements ImageService{
     }
     @Override
     public ImageDTO save(ImageDTO dto){
-        Image entity = new Image();
+        ImageEntity entity = new ImageEntity();
         entity = ImageMapper.toEntity(dto);
         return ImageMapper.toDTO(imageRepository.save(entity));
     }
@@ -68,7 +68,7 @@ public class ImageServiceImpl implements ImageService{
             throw new IOException("Failed to save file: "+ e.getMessage(),e);
         }
 
-        Image image =  new Image();
+        ImageEntity image =  new ImageEntity();
         image.setName(fileName);
         image.setPath(filePath);
         image.setType(fileType);

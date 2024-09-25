@@ -1,4 +1,4 @@
-package com.ourcode.savememories.exception.memory;
+package com.ourcode.savememories.infrastructure.exception.memory;
 
 import java.util.UUID;
 

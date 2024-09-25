@@ -1,4 +1,4 @@
-package com.ourcode.savememories.entities;
+package com.ourcode.savememories.domain.model.image;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(schema = "dbo", name = "Image")
-public class Image {
+public class ImageEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "ImageId")
@@ -26,9 +26,9 @@ public class Image {
     @Column(name = "CreateAt")
     private LocalDateTime createAt;
     
-    public Image() {
+    public ImageEntity() {
     }
-    public Image(UUID imageId, String name, String path, String type, LocalDateTime createAt) {
+    public ImageEntity(UUID imageId, String name, String path, String type, LocalDateTime createAt) {
         this.imageId = imageId;
         this.name = name;
         this.path = path;
