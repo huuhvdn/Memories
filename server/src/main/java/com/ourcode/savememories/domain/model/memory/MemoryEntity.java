@@ -31,17 +31,6 @@ public class MemoryEntity {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ImageId")
     private ImageEntity image;
-
-    
-    public MemoryEntity() {
-    }
-    public MemoryEntity(UUID memoryId, String title, LocalDateTime eventDate, LocalDateTime createdAt, ImageEntity image) {
-        this.memoryId = memoryId;
-        this.title = title;
-        this.eventDate = eventDate;
-        this.createdAt = createdAt;
-        this.image = image;
-    }
     
     public UUID getMemoryId() {
         return memoryId;

@@ -25,17 +25,6 @@ public class ImageEntity {
     private String type;
     @Column(name = "CreateAt")
     private LocalDateTime createAt;
-    
-    public ImageEntity() {
-    }
-    public ImageEntity(UUID imageId, String name, String path, String type, LocalDateTime createAt) {
-        this.imageId = imageId;
-        this.name = name;
-        this.path = path;
-        this.type = type;
-        this.createAt = createAt;
-    }
-
 
     public UUID getImageId() {
         return imageId;

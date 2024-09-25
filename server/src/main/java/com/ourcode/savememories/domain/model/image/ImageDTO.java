@@ -9,16 +9,6 @@ public class ImageDTO {
     private String path;
     private String type;   
     private LocalDateTime createAt;
-
-    public ImageDTO() {
-    }
-    public ImageDTO(UUID imageId, String name, String path, String type, LocalDateTime createAt) {
-        this.imageId = imageId;
-        this.name = name;
-        this.path = path;
-        this.type = type;
-        this.createAt = createAt;
-    }
     
     public UUID getImageId() {
         return imageId;

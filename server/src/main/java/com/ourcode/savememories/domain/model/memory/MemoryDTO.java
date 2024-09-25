@@ -13,15 +13,6 @@ public class MemoryDTO {
     private ImageDTO imageDTO;
 
     
-    public MemoryDTO() {
-    }
-    public MemoryDTO(UUID memoryId, String title, LocalDateTime eventDate, LocalDateTime createdAt, ImageDTO imageDTO) {
-        this.memoryId = memoryId;
-        this.title = title;
-        this.eventDate = eventDate;
-        this.createdAt = createdAt;
-        this.imageDTO = imageDTO;
-    }
 
     public UUID getMemoryId() {
         return memoryId;
