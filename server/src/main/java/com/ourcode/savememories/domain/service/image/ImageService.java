@@ -1,6 +1,5 @@
 package com.ourcode.savememories.domain.service.image;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -14,6 +13,6 @@ public interface ImageService {
     Optional<ImageDTO> findById(UUID id);
     ImageDTO save(ImageDTO dto);
     void deleteById(UUID id);
-    ImageDTO uploadImage(MultipartFile file) throws IOException;
+    ImageDTO uploadImage(MultipartFile file);
     boolean isValidImageType(String fileType);
 }

@@ -13,9 +13,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.ourcode.savememories.domain.model.image.ImageDTO;
 import com.ourcode.savememories.domain.model.memory.MemoryDTO;
+import com.ourcode.savememories.domain.service.image.ImageServiceImpl;
 import com.ourcode.savememories.domain.service.memory.MemoryServiceImpl;
 
 @RestController
@@ -23,11 +27,20 @@ import com.ourcode.savememories.domain.service.memory.MemoryServiceImpl;
 public class MemoryController {
     @Autowired
     private MemoryServiceImpl memoryServiceImpl;
+    @Autowired
+    private ImageServiceImpl imageServiceImpl;
 
     @PostMapping("/create")
-    public ResponseEntity<MemoryDTO> createMemory(@RequestBody MemoryDTO memoryDTO){
-        MemoryDTO createdMemory = memoryServiceImpl.createMemory(memoryDTO);
-        return new ResponseEntity<>(createdMemory,HttpStatus.CREATED);
+    public ResponseEntity<MemoryDTO> createMemory(@RequestPart("memory") MemoryDTO memoryDTO
+                                                    ,@RequestPart("file") MultipartFile file){
+        ImageDTO image = imageServiceImpl.uploadImage(file);
+
+        
+        MemoryDTO createdMemory = new MemoryDTO();
+        createdMemory.setTitle(memoryDTO.getTitle());
+        createdMemory.setEventDate(memoryDTO.getEventDate());
+        createdMemory.setImageDTO(image);
+        return new ResponseEntity<>(memoryServiceImpl.createMemory(createdMemory),HttpStatus.CREATED);
     }
     @GetMapping("/{id}")
     public ResponseEntity<MemoryDTO> getMemoryById(@PathVariable UUID id){

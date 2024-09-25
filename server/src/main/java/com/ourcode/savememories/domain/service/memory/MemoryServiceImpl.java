@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.UUID;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,7 +29,7 @@ public class MemoryServiceImpl implements MemoryService {
         if (memoryDTO == null) {
             throw new IllegalArgumentException("MemoryDTO cannot be null");
         }
-
+        memoryDTO.setCreatedAt(LocalDateTime.now());
         MemoryEntity memory = MemoryMapper.toEntity(memoryDTO);
         MemoryEntity savedMemory = memoryRepository.save(memory);
 

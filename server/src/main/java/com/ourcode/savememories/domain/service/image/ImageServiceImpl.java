@@ -1,7 +1,6 @@
 package com.ourcode.savememories.domain.service.image;
 
 import java.io.File;
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -46,7 +45,7 @@ public class ImageServiceImpl implements ImageService{
         imageRepository.deleteById(id);
     }
     @Override
-    public ImageDTO uploadImage(MultipartFile file)throws IOException{
+    public ImageDTO uploadImage(MultipartFile file){
         if(file == null || file.isEmpty()){
             throw new IllegalArgumentException("File must not be empty or null");
         }
@@ -59,13 +58,13 @@ public class ImageServiceImpl implements ImageService{
         String filePath = uploadDir + File.separator + fileName;
         String fileType = file.getContentType();
 
-        if(!isValidImageType(fileType)){
-            throw new IllegalArgumentException("Invalid image Type:"+ fileType);
-        }
+        // if(!isValidImageType(fileType)){
+        //     throw new IllegalArgumentException("Invalid image Type:"+ fileType);
+        // }
         try {
             file.transferTo(new File(filePath));
         } catch (Exception e) {
-            throw new IOException("Failed to save file: "+ e.getMessage(),e);
+            throw new RuntimeException("Failed to save file: "+ e.getMessage(),e);
         }
 
         ImageEntity image =  new ImageEntity();
