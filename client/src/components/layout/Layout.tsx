@@ -9,9 +9,9 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   return (
     <>
-      <div className="main-layout tw-h-screen tw-w-full tw-bg-slate-100 tw-flex tw-flex-col">
+      <div id="main-layout" className="main-layout tw-h-screen tw-w-full tw-bg-slate-100 tw-flex tw-flex-col">
         <Topbar />
-        {children && <div className="tw-flex-1">{children}</div>}
+        {children && <div className="tw-flex-1 tw-bg-white">{children}</div>}
       </div>
     </>
   );
