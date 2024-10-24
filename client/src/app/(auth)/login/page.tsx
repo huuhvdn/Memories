@@ -4,6 +4,7 @@ import AuthLayout from "../auth";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import httpService, { ApiResponse } from "@/services/axios";
+import { useToast } from "@/context/SnackbarContext";
 
 type LoginForm = {
   username: string;
@@ -11,6 +12,7 @@ type LoginForm = {
 };
 
 export default function LoginPage() {
+  const { showToastNotificationSuccess } = useToast();
   const {
     register,
     control,
@@ -33,6 +35,11 @@ export default function LoginPage() {
 
   const handleLogin = async (data: LoginForm) => {
     console.log(data);
+    if (data.username === "@Nakhai9") {
+      if (showToastNotificationSuccess) {
+        showToastNotificationSuccess("Logged successfully");
+      }
+    }
   };
 
   useEffect(() => {
